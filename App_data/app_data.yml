@@ -1,0 +1,7 @@
+App_Data:
+  URL: "https:\\www.youtube.in"
+  timeout : 30
+  Trending_ele : '//*[text()="Trending"]'
+  View_ele : '//div[@id="metadata"]//span[contains(@class,"inline-metadata-item") and contains(text(),"views")]'
+  Title_ele : '//a[@id="video-title"]//yt-formatted-string'
+  Video_title : '//div[@id="title"]//yt-formatted-string'

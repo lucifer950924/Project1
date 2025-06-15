@@ -1,0 +1,4 @@
+config_data:
+  language : "python"
+  suite : "Test_Scripts\\Browser_Youtube.py"
+  tags : ""
