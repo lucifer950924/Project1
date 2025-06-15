@@ -10,6 +10,5 @@ App_Data:
   Email_input_field : '//label[contains(text(),"Email ID")]//following::input'
   Username: "amaiti.9509@gmail.com"
   password_input_field : //label[text()="Password"]//following::input[@type="password"]
-  password : "#Lucifer950924"
   submit_btn : '//button[@type="submit"]'
   Login_Title : //div[@title="Arnab Maity"]

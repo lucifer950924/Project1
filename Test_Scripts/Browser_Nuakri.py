@@ -7,8 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait as WDW
 import yaml
 import os
 from datetime import datetime as dt
+from Encrypt_Decrypt import Encrypt_Decrypt
 
-# from runner import take_screenshot
 
 
 class Browser_Nuakri:
@@ -36,9 +36,9 @@ class Browser_Nuakri:
         time.sleep(2)
         WDW(self.driver,self.app_data['timeout']).until(EC.presence_of_element_located((By.XPATH,self.app_data['Email_input_field'])))
         self.take_screenshot()
-        
+        password = Encrypt_Decrypt.decrypt_pass(username=self.app_data['Username'])
         self.driver.find_element(By.XPATH, self.app_data['Email_input_field']).send_keys(self.app_data['Username'])
-        self.driver.find_element(By.XPATH, self.app_data['password_input_field']).send_keys(self.app_data['password'])
+        self.driver.find_element(By.XPATH, self.app_data['password_input_field']).send_keys(password)
         self.take_screenshot()
         WDW(self.driver,self.app_data['timeout']).until(EC.presence_of_element_located((By.XPATH,self.app_data['submit_btn']))).click()
         WDW(self.driver,self.app_data['timeout']).until(EC.presence_of_element_located((By.XPATH,self.app_data['Login_Title'])))

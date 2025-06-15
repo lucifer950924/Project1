@@ -13,7 +13,7 @@ from datetime import datetime as dt
 
 class Browser_Youtube:
     def __init__(self):
-        self.list_of_trending_videos = []
+        
         with open("App_data\\app_data.yml", "r") as f:
             self.data = yaml.safe_load(f)
             self.app_data = self.data['App_Data']
