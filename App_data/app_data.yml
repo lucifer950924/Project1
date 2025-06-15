@@ -1,7 +1,15 @@
 App_Data:
   URL: "https:\\www.youtube.in"
+  Naukri_URL : "https://www.naukri.com/"
   timeout : 30
   Trending_ele : '//*[text()="Trending"]'
   View_ele : '//div[@id="metadata"]//span[contains(@class,"inline-metadata-item") and contains(text(),"views")]'
   Title_ele : '//a[@id="video-title"]//yt-formatted-string'
   Video_title : '//div[@id="title"]//yt-formatted-string'
+  Naukri_Login_ele : '//a[@title="Jobseeker Login"]'
+  Email_input_field : '//label[contains(text(),"Email ID")]//following::input'
+  Username: "amaiti.9509@gmail.com"
+  password_input_field : //label[text()="Password"]//following::input[@type="password"]
+  password : "#Lucifer950924"
+  submit_btn : '//button[@type="submit"]'
+  Login_Title : //div[@title="Arnab Maity"]
