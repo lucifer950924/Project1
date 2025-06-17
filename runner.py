@@ -5,8 +5,7 @@ import shutil
 import yaml
 import pyautogui
 import snoop
-import logging
-from functools import wraps
+
 
 
 now = dt.now().strftime("%Y%m%d%H%M%S")
