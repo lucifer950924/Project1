@@ -1,4 +1,5 @@
 config_data:
   language : "python"
-  suite : "Test_Scripts\\Browser_Nuakri.py"
-  tags : ""
+  suite : "run_behave.py"
+  tags : "@smoke"
+  feature_path : "Test_Scripts/feature2"

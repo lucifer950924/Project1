@@ -12,3 +12,11 @@ App_Data:
   password_input_field : //label[text()="Password"]//following::input[@type="password"]
   submit_btn : '//button[@type="submit"]'
   Login_Title : //div[@title="Arnab Maity"]
+  Job_Search : //span[text()="Search jobs here"]
+  Job_search_term : 'Automation Testing Python'
+  List_of_Suggestions : //ul[@class="layer-wrap"]//li//b
+  Search_button : //*[text()="Search"]
+  Search_field : //input[@placeholder="Enter keyword / designation / companies"]
+  company_name_elements : //div[contains(@class,"job-listing")]//a[contains(@class,"comp-name")]
+  rating_element : //div[contains(@class,"job-listing")]//a[contains(@class,"rating")]//span[contains(@class,"main")]
+  Job_title : //div[contains(@class,"job-listing")]//a[contains(@class,"title")]
