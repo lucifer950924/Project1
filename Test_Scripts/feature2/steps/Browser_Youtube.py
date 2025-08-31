@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
 import time
 from selenium.webdriver.support.ui import WebDriverWait as WDW
 import yaml
@@ -24,9 +26,15 @@ with open("App_data\\app_data.yml", "r") as f:
 
 @given('login to Youtube')
 def browse_yt(context):
-    context.driver = webdriver.Edge()
+    curr_wd = os.getcwd()
+    driver_dir = os.path.join(curr_wd,"Drivers\\msedgedriver.exe")
+    service =Service(driver_dir)
+    edgeoptions = Options()
+    edgeoptions.add_argument("--start-maximized")
+    edgeoptions.add_argument("--inprivate")
+    context.driver = webdriver.Edge(options=edgeoptions,service=service)
     context.driver.get(app_data['URL'])
-    context.driver.maximize_window()
+    # context.driver.maximize_window()
 
     
 @then('Navigate to the Trending Video')

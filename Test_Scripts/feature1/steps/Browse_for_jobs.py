@@ -4,6 +4,8 @@ from selenium import webdriver
 import yaml
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
 import time
 from utils.Encrypt_Decrypt import Encrypt_Decrypt
 from utils.take_screenshot import take_screenshot
@@ -18,9 +20,15 @@ with open("App_data\\app_data.yml","r") as f:
 
 @given('login to page')
 def login_to_page(context):
-    context.driver = webdriver.Edge()
+    curr_wd = os.getcwd()
+    driver_dir = os.path.join(curr_wd,"Drivers\\msedgedriver.exe")
+    service =Service(driver_dir)
+    edgeoptions = Options()
+    edgeoptions.add_argument("--start-maximized")
+    edgeoptions.add_argument("--inprivate")
+    context.driver = webdriver.Edge(options=edgeoptions,service=service)
     context.driver.get(app_data['Naukri_URL'])
-    context.driver.maximize_window()
+    # context.driver.maximize_window()
     WebDriverWait(context.driver,app_data['timeout']).until(EC.presence_of_element_located((By.XPATH,app_data['Naukri_Login_ele']))).click()
     time.sleep(2)
     context.driver.find_element(By.XPATH,app_data['Email_input_field']).send_keys(app_data['Username'])
