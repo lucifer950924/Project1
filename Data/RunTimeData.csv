@@ -1,0 +1,6 @@
+Browser,Chrome
+Timeout,11
+FileUpload,C:\Users\death\Desktop\My_Project_1\PythonTesting\Drivers\chromedriver.exe
+MultipleUploadFiles,C:\Users\death\Desktop\My_Project_1\PythonTesting\Drivers\chromedriver.exe|C:\Users\death\Desktop\My_Project_1\PythonTesting\Data\RunTimeData.csv
+PlaywrightChannel,msedge
+PlaywrightHeadless,False
