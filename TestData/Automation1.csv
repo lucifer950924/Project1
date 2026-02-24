@@ -5,4 +5,4 @@ name,Automation1
 email,automate1.xyz.com
 phone,12345678
 address,Noida
-uploadFilepath,F:\Python_Project\SeleniumBehaveAutomation\TestData\Automation1.csv
+uploadFilepath,.\TestData\Automation1.csv
