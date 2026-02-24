@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
@@ -7,19 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 import os, time, logging , pathlib , csv
 from selenium.common.exceptions import NoSuchElementException,StaleElementReferenceException,TimeoutException,ElementClickInterceptedException
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
+from Environment.environment import Environment
 from Utils.csvReader import CSVReader
 
-class Automation1Steps:
+class Automation1Pages:
     
     def __init__(self):
        
-        driver_location = os.path.join(os.getcwd(),'driver','msedgedriver.exe')
-        service = Service(driver_location)
-        options = Options()
-        options.add_argument('--start-maximized')
-        self.driver = webdriver.Edge(options=options, service=service)
+        self.driver = Environment().get_driver()
         datafile = CSVReader('Automation1')
         self.data = datafile.read_csv()
         self.timeout = self.data['timeout']
@@ -86,6 +81,43 @@ class Automation1Steps:
         except TimeoutException:
             print(f'Timeout while trying to find element with label {label}')
         
+    def upload_file_byinput(self,filepath):
+        try:
+            locator = self.driver.find_element(By.XPATH,'//input[@type="file"]')
+            actions = ActionChains(self.driver)
+            actions.move_to_element(locator).perform()
+            time.sleep(0.5)
+            locator.send_keys(filepath)
+        except FileNotFoundError:
+            print(f'File at path {filepath} not found')
+        except NoSuchElementException:
+            print(f'File input element not found')
 
+    def hover_element(self,text):
+        try:
+            loc = lambda x: self.driver.find_element(By.XPATH,f'//*[text()="{x}"]')
+            locator = loc(text)
+            actions = ActionChains(self.driver)
+            actions.move_to_element(locator).perform()
+        except NoSuchElementException:
+            print(f'Element with text {text} not found')
+        except StaleElementReferenceException:
+            print(f'Element with text {text} is not stable')
+        except TimeoutException:
+            print(f'Timeout while trying to find element with text {text}') 
+        
+    def drag_element(self,sorce_text,target_text):
+        try:
+            loc = lambda x: self.driver.find_element(By.XPATH,f'//*[text()="{x}"]')
+            source_locator = loc(sorce_text)
+            target_locator = loc(target_text)
+            actions = ActionChains(self.driver)
+            actions.drag_and_drop(source_locator,target_locator).perform()
+        except NoSuchElementException:
+            print(f'Element with text {sorce_text} or {target_text} not found')
+        except StaleElementReferenceException:
+            print(f'Element with text {sorce_text} or {target_text} is not stable')
+        except TimeoutException:
+            print(f'Timeout while trying to find element with text {sorce_text} or {target_text}')
     def quit_browser(self):
         self.driver.quit()

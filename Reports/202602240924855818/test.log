@@ -1,0 +1,34 @@
+2026-02-24 09:38:24,856 - INFO - ==================Test Execution Started=================
+2026-02-24 09:38:24,857 - INFO - ==================Starting Scenario: Successful Automation of the page=================
+2026-02-24 09:38:24,858 - INFO - Hitting the URL
+2026-02-24 09:38:28,812 - INFO - URL hit successfully
+2026-02-24 09:38:28,812 - INFO - Step passed: Hit the URL
+2026-02-24 09:38:28,813 - INFO - Automating the page
+2026-02-24 09:38:28,813 - INFO - Filling the form fields
+2026-02-24 09:38:28,890 - INFO - Filling the form fields name with id and wait successful
+2026-02-24 09:38:28,943 - INFO - Filling the form fields email with id and wait successful
+2026-02-24 09:38:28,990 - INFO - Filling the form fields phone with id and wait successful
+2026-02-24 09:38:29,035 - INFO - Filling the form fields address with text and wait successful
+2026-02-24 09:38:29,081 - INFO - Filling the form fields colors with id and wait successful
+2026-02-24 09:38:29,082 - INFO - Step passed: Automate the page
+2026-02-24 09:38:29,082 - INFO - Closing the browser
+2026-02-24 09:38:31,206 - INFO - Step passed: Close the page
+2026-02-24 09:38:31,206 - INFO - ==================Ending Scenario: Successful Automation of the page=================
+2026-02-24 09:38:31,207 - INFO - ==================Ending Tag: smoke=================
+2026-02-24 09:38:31,207 - INFO - ==================Starting Scenario: Upload the File=================
+2026-02-24 09:38:31,208 - INFO - Hitting the URL
+2026-02-24 09:38:35,616 - INFO - URL hit successfully
+2026-02-24 09:38:35,616 - INFO - Step passed: Hit the URL
+2026-02-24 09:38:35,617 - INFO - Uploading the file
+2026-02-24 09:38:36,421 - INFO - File uploaded successfully
+2026-02-24 09:38:36,421 - INFO - Performing mouse hover and drag and drop actions
+2026-02-24 09:38:36,687 - INFO - Mouse hover action performed successfully
+2026-02-24 09:38:36,687 - INFO - Performing drag and drop action
+2026-02-24 09:38:37,232 - INFO - Drag and drop action performed successfully
+2026-02-24 09:38:37,232 - INFO - Step passed: Upload the File
+2026-02-24 09:38:37,233 - INFO - Closing the browser
+2026-02-24 09:38:39,356 - INFO - Step passed: Close the page
+2026-02-24 09:38:39,357 - INFO - ==================Ending Scenario: Upload the File=================
+2026-02-24 09:38:39,357 - INFO - ==================Ending Tag: Regression=================
+2026-02-24 09:38:39,357 - INFO - ==================Ending Feature: Automate the Url=================
+2026-02-24 09:38:39,357 - INFO - ==================Test Execution Completed=================
